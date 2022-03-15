@@ -1,0 +1,14 @@
+.wrap {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    img {
+        object-fit: contain;
+        width: 32%;
+        cursor: pointer;
+        margin-right: 12px;
+        margin-top: 20px;
+        border: 1px solid #e2e2e2;
+        background-color: #fff;
+    }
+}

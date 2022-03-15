@@ -1,0 +1,50 @@
+.photoWrap {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    img {
+        object-fit: contain;
+        width: 32%;
+        cursor: pointer;
+        margin-right: 12px;
+        margin-top: 20px;
+        border: 1px solid #e2e2e2;
+        background-color: #fff;
+    }
+}
+
+.imageL {
+    img {
+        width: 380px;
+        object-fit: contain;
+    }
+}
+
+.imageR {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    flex: 1;
+    strong {
+        font-size: 18px;
+        text-align: center;
+    }
+    p {
+        font-size: 16px;
+        text-align: center;
+        margin-top: 4px;
+    }
+    img {
+        width: 136px;
+        margin-top: 14px;
+        cursor: pointer;
+        margin-right: 6px;
+    }
+}
+.wrap {
+    margin: auto;
+    div {
+        text-align: center;
+    }
+}

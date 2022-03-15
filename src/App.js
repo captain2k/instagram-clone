@@ -1,23 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./Components/Header";
+import { Navigate, Route, Routes } from 'react-router'
+import routes from "./routes";
+import './App.css'
+import { useSelector } from "react-redux";
+import Profile from "./Components/Profile";
 
 function App() {
+
+  const userStore = useSelector(state => state.userReducer)
+
+  const showRoutes = () => {
+    return routes.map((route, index) => {
+      return (
+        <Route
+          key={index}
+          path={route.path}
+          element={route.element()}
+        />
+      )
+    })
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* Header */}
+      <div className="header">
+        <Header />
+      </div>
+      {/* Contents */}
+      <div className="content">
+        <div className="container">
+          <div className="row">
+            <Routes>
+              {showRoutes()}
+              <Route path='/:userName/*' element={userStore.isOnline ? <Profile /> : <Navigate to='/' />} />
+            </Routes>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

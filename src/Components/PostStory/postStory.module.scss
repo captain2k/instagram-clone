@@ -1,0 +1,23 @@
+.post_story {
+    background-color: #fff;
+    padding: 15px 0 15px 10px;
+    max-width: 612px;
+    border-radius: 3px;
+    border: 1px solid #e4e4e4;
+}
+.post_story_list {
+    display: flex;
+}
+
+.post_story_item {
+    margin-right: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    i {
+        display: block;
+    }
+    p {
+        margin: 5px 0 0 0;
+    }
+}
